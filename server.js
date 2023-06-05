@@ -2,7 +2,6 @@ const WebSocket = require('ws');
 const express = require('express');
 const app = express();
 const path = require('path')
-const serve = require('http').createServer(app)
 
 const port = process.env.PORT || 3000
 
@@ -12,7 +11,8 @@ let messages = [];
 let connections = [];
 
 server.on("connection", (ws) => {
-    ws.send("Bem-vindo!");
+    ws.send({messages: messages});
+    ws.send({length: connections.length});
 
     // Enviar mensagens existentes para o cliente
     messages.forEach((message) => {
@@ -34,4 +34,6 @@ server.on("connection", (ws) => {
     });
 });
 
-serve.listen(3223)
+
+module.exports(server)
+module.exports(port)

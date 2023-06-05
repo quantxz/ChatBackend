@@ -12,7 +12,8 @@ let messages = [];
 let connections = [];
 
 server.on("connection", (ws) => {
-    ws.send("Bem-vindo!");
+    ws.send({messages: messages});
+    ws.send({length: connections.length});
 
     // Enviar mensagens existentes para o cliente
     messages.forEach((message) => {

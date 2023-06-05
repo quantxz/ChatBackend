@@ -1,7 +1,6 @@
 {
     "version": 2,
     "routes": [
-      { "handle": "server.js", "src": "/api/.*" },
       { "src": "/(.*)", "dest": "/" }
     ],
     "rewrites": []

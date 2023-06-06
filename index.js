@@ -12,5 +12,5 @@ serverr.on('upgrade', (request, socket, head) => {
 });
 
 serverr.listen(port, () => {
-  console.log('Servidor HTTP e WebSocket iniciados na porta 3000.');
+  return 'Servidor HTTP e WebSocket iniciados na porta 3000.';
 });

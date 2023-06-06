@@ -4,13 +4,14 @@ const socketIO = require('socket.io');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
 const server = http.createServer(app);
 const io = socketIO(server);
 
 const port = process.env.PORT || 3000;
 
 let messages = [];
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

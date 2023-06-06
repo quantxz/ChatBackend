@@ -10,6 +10,10 @@ const port = process.env.PORT || 3000;
 
 let messages = [];
 
+app.get("/", (req, res) => {
+  return res.json(messages)
+})
+
 io.on('connection', (socket) => {
   socket.emit('messages', messages);
 
